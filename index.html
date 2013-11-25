@@ -1,12 +1,32 @@
+<!DOCTYPE HTML>
 <html>
+<head>
+<title>Test Application</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Test Application" />
+<meta name="keywords" content="Test Application" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
 <body>
-    <div>
-        <h1>Work Test</h1>
-        <ul>
+<div class="wrapper">
+
+    <!-- Header Section -->
+    <header>
+        <a class="logo" href="/" title="Work Test">WORK TEST</a>
+        <div class="search">
+            <form action="#" method="POST">
+                <input type="text" name="search" value="" />
+                <input type="submit" name="submit" value="Search" />
+            </form>
+        </div>
+        <ul id="nav">
             <li><a href="#">Nav 1</a></li>
-            <li>
+            <li class="parent">
                 <a href="#">Nav 2</a>
-                <ul>
+                <ul class="sub-nav">
                     <li><a href="#">Sub 1</a></li>
                     <li><a href="#">Sub 2</a></li>
                     <li><a href="#">Sub 3</a></li>
@@ -16,19 +36,15 @@
             <li><a href="#">Nav 4</a></li>
             <li><a href="#" target="_blank">External</a></li>
         </ul>
-    </div>
-    <div>
-        <form action="#" method="POST">
-            <input type="text" name="search" value="" />
-            <input type="submit" name="submit" value="Search" />
-        </form>
-    </div>
-    <div>
-        <div>
-            <h2>Entry Heading</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
-            <div>
 
+    </header>
+
+    <!-- Content Section -->
+    <div class="content">
+        <div class="entry">
+            <h2>Entry Heading</h2>
+            <span>Added by Author on 2013-09-03 in <a class="tag" href="#">Category</a>, <a class="tag" href="#">Tag</a> </span>
+            <div>
                 <img src="http://baconmockup.com/400/300">
                 <p>Bacon ipsum dolor sit amet non irure duis, et aute salami est pork loin consequat pariatur in culpa.
                     Exercitation consequat pork loin duis, elit aliqua occaecat et salami. Pig aliquip shank in
@@ -46,19 +62,18 @@
                     ut nostrud swine. Consequat sirloin tri-tip, aute eiusmod prosciutto sint shank dolor ut. Enim
                     dolore irure pariatur ribeye aliquip salami.</p>
             </div>
+            <div class="clr"></div>
         </div>
-        <div>
+        <div class="entry">
             <h2>Another Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span>Added by Author on 2013-09-03 in <a class="tag" href="#">Category</a>, <a class="tag" href="#">Tag</a> </span>
             <div>
-
                 <img src="http://baconmockup.com/300/400">
                 <p>Beef short ribs quis, exercitation corned beef turkey ut incididunt shank aliqua chuck sunt sed
                     frankfurter minim. Sirloin biltong occaecat qui. Cow tri-tip kevin mollit et culpa. Cow hamburger
                     esse commodo flank bacon pastrami, reprehenderit deserunt. Sunt et pig commodo. Ad consectetur
                     excepteur ea, turkey sunt tail tempor strip steak reprehenderit.</p>
-
-                <table>
+                <table class="tbl">
                     <tr bgcolor="lightgrey">
                         <td><b>Heading</b></td>
                         <td><b>For</b></td>
@@ -76,10 +91,11 @@
                     </tr>
                 </table>
             </div>
+            <div class="clr"></div>
         </div>
-        <div>
+        <div class="entry">
             <h2>Final Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span>Added by Author on 2013-09-03 in <a class="tag" href="#">Category</a>, <a class="tag"  href="#">Tag</a> </span>
             <div>
 
                 <img src="http://baconmockup.com/300/300">
@@ -94,10 +110,12 @@
                     capicola. Incididunt brisket ground round esse adipisicing in ad dolore elit. Kielbasa sed eiusmod
                     tongue, et shank chicken ball tip spare ribs laborum.</p>
             </div>
+            <div class="clr"></div>
         </div>
     </div>
-    <div>
-        Lots of footer information.
+
+    <!-- Footer Section -->
+    <footer>
         <ul>
             <li>
                 <a href="#">Footer link</a>
@@ -130,10 +148,16 @@
             <li>
                 <a href="#">Footer link</a>
             </li>
-
-
-
         </ul>
-    </div>
+        <p>Lots of footer information.</p>
+    </footer>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.parent').click(function() {
+            $('.sub-nav').toggleClass('visible');
+        });
+    });
+</script>
 </body>
 </html>
