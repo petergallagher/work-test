@@ -1,0 +1,86 @@
+body {
+    font: normal 12px/14px Monaco, Arial, sans-serif;
+    background-color: floralwhite;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    width: 610px;
+}
+
+nav ul > li {
+    width: 100px;
+    float: left;
+}
+
+nav ul > li ul {
+    display: none;
+}
+
+nav ul > li:hover ul {
+    display: block;
+}
+
+form fieldset {
+    border: none;
+    margin-top: -9px;
+    width: 200px;
+}
+
+form fieldset input[type='submit'] {
+    margin-left: -5px;
+}
+
+.cp-page-content h2 {
+    margin-bottom: 10px;
+}
+
+.cp-page-content img {
+    float: left;
+    margin-right: 10px;
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.cp-page-content p {
+    width: 1200px;
+    word-break: break-word; /* webkit only but it's cool :) */
+}
+
+.cp-page-content > div {
+    margin-bottom: 35px;
+}
+
+.cp-page-content > div::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.cp-page-content table {
+    border-spacing: 0px;
+}
+
+.cp-page-content table,
+.cp-page-content table td {
+    border: 1px solid grey;
+}
+
+.cp-page-content table thead tr {
+    background-color: lightgray;
+}
+
+.cp-page-content table thead tr td {
+    font-weight: bold;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    width: 20%;
+    float: left;
+}

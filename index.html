@@ -1,139 +1,146 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Work Test</title>
+    <meta name="description" content="work test">
+    <meta name="keywords" content="work, test">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
-    <div>
+    <header>
         <h1>Work Test</h1>
-        <ul>
-            <li><a href="#">Nav 1</a></li>
-            <li>
-                <a href="#">Nav 2</a>
-                <ul>
-                    <li><a href="#">Sub 1</a></li>
-                    <li><a href="#">Sub 2</a></li>
-                    <li><a href="#">Sub 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Nav 3</a></li>
-            <li><a href="#">Nav 4</a></li>
-            <li><a href="#" target="_blank">External</a></li>
-        </ul>
-    </div>
-    <div>
-        <form action="#" method="POST">
-            <input type="text" name="search" value="" />
-            <input type="submit" name="submit" value="Search" />
+        <nav>
+            <ul>
+                <li><a href="#">Nav 1</a></li>
+                <li><a href="#">Nav 2</a>
+                    <ul>
+                        <li><a href="#">Sub 1</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                        <li><a href="#">Sub 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Nav 3</a></li>
+                <li><a href="#">Nav 4</a></li>
+                <li><a href="#" target="_blank">External</a></li>
+            </ul>
+        </nav>
+        <form action="#" method="POST" class="cp-search-form">
+            <fieldset>
+                <input type="text" name="search" value="" placeholder="Search for something" />
+                <input type="submit" name="submit" value="Search" />
+            </fieldset>
         </form>
-    </div>
-    <div>
+    </header>
+    <div class="cp-page-content">
         <div>
             <h2>Entry Heading</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a></span>
             <div>
-
-                <img src="http://baconmockup.com/400/300">
-                <p>Bacon ipsum dolor sit amet non irure duis, et aute salami est pork loin consequat pariatur in culpa.
+                <img src="http://baconmockup.com/400/300" alt="Bacon">
+                <p>
+                    Bacon ipsum dolor sit amet non irure duis, et aute salami est pork loin consequat pariatur in culpa.
                     Exercitation consequat pork loin duis, elit aliqua occaecat et salami. Pig aliquip shank in
                     andouille sirloin velit beef, quis salami ut culpa. T-bone elit esse nostrud. Ex shank eiusmod enim.
                     Pariatur venison cupidatat ea pork irure tail jowl pork loin quis ut shoulder sed esse tempor.
-                    Aute dolore minim, sirloin tempor sausage cow pariatur tongue kielbasa.</p>
-
-                <p>Tongue short loin ut sausage sirloin culpa. Pariatur non chuck reprehenderit doner capicola consequat,
+                    Aute dolore minim, sirloin tempor sausage cow pariatur tongue kielbasa.
+                </p>
+                <p>
+                    Tongue short loin ut sausage sirloin culpa. Pariatur non chuck reprehenderit doner capicola consequat,
                     velit quis corned beef chicken adipisicing eiusmod. Ex in tail sausage short ribs, tongue
                     frankfurter swine in enim pork chop pork loin chicken. Adipisicing meatball salami beef commodo
-                    sunt aliquip deserunt ea turkey id.</p>
-
-                <p>Kielbasa sed officia voluptate in fugiat deserunt pancetta dolor nulla occaecat et t-bone pastrami.
+                    sunt aliquip deserunt ea turkey id.
+                </p>
+                <p>
+                    Kielbasa sed officia voluptate in fugiat deserunt pancetta dolor nulla occaecat et t-bone pastrami.
                     Ut pastrami cow pork loin ea. Laboris qui enim anim. Cillum exercitation prosciutto, ribeye aute
                     ut nostrud swine. Consequat sirloin tri-tip, aute eiusmod prosciutto sint shank dolor ut. Enim
-                    dolore irure pariatur ribeye aliquip salami.</p>
+                    dolore irure pariatur ribeye aliquip salami.
+                </p>
             </div>
         </div>
         <div>
             <h2>Another Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a></span>
             <div>
-
-                <img src="http://baconmockup.com/300/400">
-                <p>Beef short ribs quis, exercitation corned beef turkey ut incididunt shank aliqua chuck sunt sed
+                <img src="http://baconmockup.com/300/400" alt="Beef">
+                <p>
+                    Beef short ribs quis, exercitation corned beef turkey ut incididunt shank aliqua chuck sunt sed
                     frankfurter minim. Sirloin biltong occaecat qui. Cow tri-tip kevin mollit et culpa. Cow hamburger
                     esse commodo flank bacon pastrami, reprehenderit deserunt. Sunt et pig commodo. Ad consectetur
-                    excepteur ea, turkey sunt tail tempor strip steak reprehenderit.</p>
-
+                    excepteur ea, turkey sunt tail tempor strip steak reprehenderit.
+                </p>
                 <table>
-                    <tr bgcolor="lightgrey">
-                        <td><b>Heading</b></td>
-                        <td><b>For</b></td>
-                        <td><b>Table</b></td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td>In</td>
-                        <td>Table</td>
-                    </tr>
-                     <tr>
-                        <td>On</td>
-                        <td>Multiple</td>
-                        <td>Lines</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <td>Heading</td>
+                            <td>For</td>
+                            <td>Table</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data</td>
+                            <td>In</td>
+                            <td>Table</td>
+                        </tr>
+                        <tr>
+                            <td>On</td>
+                            <td>Multiple</td>
+                            <td>Lines</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
         <div>
             <h2>Final Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a></span>
             <div>
-
-                <img src="http://baconmockup.com/300/300">
-                <p>Ut ball tip duis strip steak laboris quis non pork turkey pancetta turducken ham nostrud. Strip
+                <img src="http://baconmockup.com/300/300" alt="Ribs">
+                <p>
+                    Ut ball tip duis strip steak laboris quis non pork turkey pancetta turducken ham nostrud. Strip
                     steak jowl qui voluptate ea pork loin. Pork minim nulla, sirloin jowl t-bone cow venison cillum.
                     Beef meatball exercitation pork loin t-bone meatloaf proident turducken ball tip short ribs ground
                     round tempor ut. Pastrami chuck short loin, short ribs adipisicing eu venison corned beef beef.
-                    Laborum cillum tri-tip pig meatloaf doner consequat ham hock corned beef anim in ea.</p>
-
-                <p>Consequat corned beef reprehenderit minim andouille biltong excepteur ball tip fatback short loin.
+                    Laborum cillum tri-tip pig meatloaf doner consequat ham hock corned beef anim in ea.
+                </p>
+                <p>
+                    Consequat corned beef reprehenderit minim andouille biltong excepteur ball tip fatback short loin.
                     Pastrami doner turkey aliquip in kielbasa sed magna laborum in adipisicing turducken reprehenderit
                     capicola. Incididunt brisket ground round esse adipisicing in ad dolore elit. Kielbasa sed eiusmod
-                    tongue, et shank chicken ball tip spare ribs laborum.</p>
+                    tongue, et shank chicken ball tip spare ribs laborum.
+                </p>
             </div>
         </div>
     </div>
-    <div>
-        Lots of footer information.
+    <footer>
+        <span>Lots of footer information.</span>
         <ul>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li><li>
-                <a href="#">Footer link</a>
-            </li><li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-            <li>
-                <a href="#">Footer link</a>
-            </li>
-
-
-
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
         </ul>
-    </div>
+    </footer>
+    <script type="application/javascript">
+        (function(win, doc){
+            win.addEventListener("load", function(){
+                doc.querySelector("body").addEventListener("click", function(e){
+                    if ("A" === e.target.tagName) {
+                        e.preventDefault();
+                        console.log("SPA routing booya! Internal... External... Whatever...");
+                    }
+                });
+            }.bind(this));
+        }(window, document));
+    </script>
 </body>
 </html>
