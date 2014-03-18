@@ -5,6 +5,61 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Html exercise. Fix any issues with the HTML and then extend/improve it anyway">
     <title>HTML exercise</title>
+    <!-- Would need a fallback option in case of no internet connection -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myform").submit(function(event) {
+                // Some sanity
+                event.preventDefault();
+                $("#result").html('');
+                // Fetch values
+                var values = $(this).serialize();
+                $.ajax({
+                    url: "test.php",
+                    type: "post",
+                    data: values,
+                    success: function(response){
+                        // Depending on controller we may need some data manipulation
+                        $("#result").html('Result: ' + response);
+                    },
+                    error:function(){
+                        $("#result").html('Error when fetching search results');
+                    }
+                });
+            });
+        });
+    </script>
+    <style media="screen" type="text/css">
+        .entry {
+            margin: 30px 10px;
+            overflow: auto;
+            clear:both;
+        }
+        .entry img {
+            float: left;
+            margin: 10px;
+            vertical-align:middle;
+        }
+        #myform {
+            float:right;
+        }
+        .note {
+            font-size: 0.8em;
+        }
+        ul {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+        } 
+        li {
+            float: left;
+            margin: 5px;
+        }
+        .footer {
+            clear:both;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -25,15 +80,17 @@
         </ul>
     </div>
     <div>
-        <form action="#" method="POST">
-            <input type="text" name="search" value="" />
+        <form id="myform" action="#" method="POST">
+            <input type="text" name="search" value="" placeholder="What are you looking for?"/>
             <input type="submit" name="submit" value="Search" />
         </form>
+        <!-- Search result will be displayed inside this div -->
+        <div id="result"></div>
     </div>
     <div>
-        <div>
+        <div class="entry">
             <h2>Entry Heading</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span class="note">Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
             <div>
 
                 <img src="http://baconmockup.com/400/300" alt="Bacon image 400x300">
@@ -54,9 +111,9 @@
                     dolore irure pariatur ribeye aliquip salami.</p>
             </div>
         </div>
-        <div>
+        <div class="entry">
             <h2>Another Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span class="note">Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
             <div>
 
                 <img src="http://baconmockup.com/300/400" alt="Bacon image 300x400">
@@ -84,9 +141,9 @@
                 </table>
             </div>
         </div>
-        <div>
+        <div class="entry">
             <h2>Final Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span class="note">Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
             <div>
 
                 <img src="http://baconmockup.com/300/300" alt="Bacon image 300x300">
@@ -103,7 +160,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="footer">
         Lots of footer information.
         <ul>
             <li>
