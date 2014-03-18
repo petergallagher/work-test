@@ -1,4 +1,72 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Html exercise. Fix any issues with the HTML and then extend/improve it anyway">
+    <title>HTML exercise</title>
+    <!-- Would need a fallback option in case of no internet connection -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myform").submit(function(event) {
+                // Some sanity
+                event.preventDefault();
+                $("#result").html('');
+                // Fetch values
+                var values = $(this).serialize();
+                $.ajax({
+                    url: "test.php",
+                    type: "post",
+                    data: values,
+                    success: function(response){
+                        // Depending on controller we may need some data manipulation
+                        $("#result").html('Result: ' + response);
+                    },
+                    error:function(){
+                        $("#result").html('Error when fetching search results');
+                    }
+                });
+            });
+        });
+    </script>
+    <style media="screen" type="text/css">
+        h1 {
+            margin: 0 auto;
+            text-align:center;
+        }
+        .entry {
+            margin: 30px 10px;
+            overflow: auto;
+            clear:both;
+        }
+        .entry img {
+            float: left;
+            margin: 10px;
+            vertical-align:middle;
+        }
+        #myform {
+            float:right;
+        }
+        .note {
+            font-size: 0.8em;
+        }
+        ul {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+        } 
+        li {
+            float: left;
+            margin: 5px;
+        }
+        .footer {
+            clear:both;
+            margin: 0 auto;
+            text-align:center;
+        }
+    </style>
+</head>
 <body>
     <div>
         <h1>Work Test</h1>
@@ -18,18 +86,20 @@
         </ul>
     </div>
     <div>
-        <form action="#" method="POST">
-            <input type="text" name="search" value="" />
+        <form id="myform" action="#" method="POST">
+            <input type="text" name="search" value="" placeholder="What are you looking for?"/>
             <input type="submit" name="submit" value="Search" />
         </form>
+        <!-- Search result will be displayed inside this div -->
+        <div id="result"></div>
     </div>
     <div>
-        <div>
+        <div class="entry">
             <h2>Entry Heading</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span class="note">Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
             <div>
 
-                <img src="http://baconmockup.com/400/300">
+                <img src="http://baconmockup.com/400/300" alt="Bacon image 400x300">
                 <p>Bacon ipsum dolor sit amet non irure duis, et aute salami est pork loin consequat pariatur in culpa.
                     Exercitation consequat pork loin duis, elit aliqua occaecat et salami. Pig aliquip shank in
                     andouille sirloin velit beef, quis salami ut culpa. T-bone elit esse nostrud. Ex shank eiusmod enim.
@@ -47,19 +117,19 @@
                     dolore irure pariatur ribeye aliquip salami.</p>
             </div>
         </div>
-        <div>
+        <div class="entry">
             <h2>Another Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span class="note">Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
             <div>
 
-                <img src="http://baconmockup.com/300/400">
+                <img src="http://baconmockup.com/300/400" alt="Bacon image 300x400">
                 <p>Beef short ribs quis, exercitation corned beef turkey ut incididunt shank aliqua chuck sunt sed
                     frankfurter minim. Sirloin biltong occaecat qui. Cow tri-tip kevin mollit et culpa. Cow hamburger
                     esse commodo flank bacon pastrami, reprehenderit deserunt. Sunt et pig commodo. Ad consectetur
                     excepteur ea, turkey sunt tail tempor strip steak reprehenderit.</p>
 
                 <table>
-                    <tr bgcolor="lightgrey">
+                    <tr style="background-color:lightgrey;">
                         <td><b>Heading</b></td>
                         <td><b>For</b></td>
                         <td><b>Table</b></td>
@@ -77,12 +147,12 @@
                 </table>
             </div>
         </div>
-        <div>
+        <div class="entry">
             <h2>Final Entry</h2>
-            <span>Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
+            <span class="note">Added by Author on 2013-09-03 in <a href="#">Category</a>, <a href="#">Tag</a> </span>
             <div>
 
-                <img src="http://baconmockup.com/300/300">
+                <img src="http://baconmockup.com/300/300" alt="Bacon image 300x300">
                 <p>Ut ball tip duis strip steak laboris quis non pork turkey pancetta turducken ham nostrud. Strip
                     steak jowl qui voluptate ea pork loin. Pork minim nulla, sirloin jowl t-bone cow venison cillum.
                     Beef meatball exercitation pork loin t-bone meatloaf proident turducken ball tip short ribs ground
@@ -96,7 +166,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="footer">
         Lots of footer information.
         <ul>
             <li>
@@ -130,9 +200,6 @@
             <li>
                 <a href="#">Footer link</a>
             </li>
-
-
-
         </ul>
     </div>
 </body>
